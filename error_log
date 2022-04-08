@@ -1,0 +1,16 @@
+[05-Apr-2022 15:53:52 UTC] PHP Warning:  mysqli::__construct(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (0) in /home/slejr4atd3pr/public_html/tech/dbconnection.php on line 6
+[05-Apr-2022 15:55:33 UTC] PHP Warning:  mysqli::__construct(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (0) in /home/slejr4atd3pr/public_html/tech/dbconnection.php on line 6
+[07-Apr-2022 15:43:11 UTC] PHP Fatal error:  Cannot redeclare getjoblist() (previously declared in /home/slejr4atd3pr/public_html/api.php:18) in /home/slejr4atd3pr/public_html/api.php on line 35
+[07-Apr-2022 15:43:11 UTC] PHP Fatal error:  Cannot redeclare getjoblist() (previously declared in /home/slejr4atd3pr/public_html/api.php:18) in /home/slejr4atd3pr/public_html/api.php on line 35
+[07-Apr-2022 15:43:30 UTC] PHP Fatal error:  Cannot redeclare getjoblist() (previously declared in /home/slejr4atd3pr/public_html/api.php:18) in /home/slejr4atd3pr/public_html/api.php on line 35
+[07-Apr-2022 15:43:30 UTC] PHP Fatal error:  Cannot redeclare getjoblist() (previously declared in /home/slejr4atd3pr/public_html/api.php:18) in /home/slejr4atd3pr/public_html/api.php on line 35
+[08-Apr-2022 11:27:21 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:22 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:22 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:22 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:23 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:38 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:38 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:39 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:39 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
+[08-Apr-2022 11:27:39 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'singaporejob'@'localhost' (using password: YES) in /home/slejr4atd3pr/public_html/dbconnection.php on line 6
