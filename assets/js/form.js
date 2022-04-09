@@ -1,4 +1,5 @@
 //getroleslist();
+var seg = $('#id').val();
 console.log('test');
 $(document).ready(function(){
 $('#update').validate({

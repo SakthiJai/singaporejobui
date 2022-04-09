@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="assets/css/wizard.css">
 <link rel="stylesheet" href="assets/css/color-1.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
 </head>
 <body>
 <?php 
@@ -127,7 +129,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>DOB</label>
-                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
+                        <input type="text"  id="date_picker" name="date_picker" class="form-control" id="date_picker"placeholder="">
                       </div>
                     </div>	
                     <div class="col-md-4">
@@ -148,13 +150,27 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Gender</label>
-                        <input type="text" class="form-control" name="pasword" id="pasword" placeholder="">
+                        <select class="form-control" id="Qualifation" name="Qualifation">
+                          <option>
+                            Male
+                          </option>
+                          <option>
+                           Female
+                          </option>
+                        </select>
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Marital Status</label>
-                        <input type="text" class="form-control" name="gender" id="gender" placeholder="">
+                         <select class="form-control" id="Qualifation" name="Qualifation">
+                          <option>
+                            Married
+                          </option>
+                          <option>
+                          Unmarried
+                          </option>
+                        </select>
                       </div>
                     </div>
 					</div>
@@ -546,6 +562,8 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+ 
 </body>
 
 <!-- Mirrored from veepixel.com/tf/html/jodice/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:50:31 GMT -->
@@ -699,4 +717,44 @@ function getJobDetails()
 		
 		});
 }
+$(document).ready(function() {
+    $('#date_picker')
+        .date_picker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#eventForm').formValidation('revalidateField', 'date');
+        });
+
+    $('#eventForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required'
+                    }
+                }
+            },
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date is required'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY',
+                        message: 'The date is not a valid'
+                    }
+                }
+            }
+        }
+    });
+});
+
 </script>
