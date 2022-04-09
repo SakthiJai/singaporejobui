@@ -99,7 +99,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 			  <!-- JQUERY STEP -->
 
 <div class="wrapper">
-    <form action="" id="registration-form">
+    <form action="" id="registration_form" enctype="multipart/form-data" action="/api.php/registerForminsert" method="POST">
         <div id="wizard">
             <!-- SECTION 1 -->
             <h4></h4>
@@ -111,27 +111,21 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>First Name</label>
-                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" data-validation="first_name" data-validation-error-msg="User name has to be an alphanumeric value (3-12 chars)" >
+                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" >
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Last Name</label>
-                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation" placeholder="">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Father Name</label>
-                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
+                        <input type="text"  id="father_name" name="father_name" class="form-control" id="designation"placeholder="">
                       </div>
                     </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>DOB</label>
-                        <input type="text"  id="date_picker" name="date_picker" class="form-control" id="date_picker"placeholder="">
-                      </div>
-                    </div>	
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Email</label>
@@ -144,33 +138,37 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         <input type="text" class="form-control" name="mobile" id="mobile" placeholder="">
                       </div>
                     </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Whatsapp Number</label>
+                        <input type="text"  id="whatsapp_number" name="whatsapp_number" class="form-control" placeholder="">
+                      </div>
+                    </div>	
 					</div>
 					<div class="row">
                     
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Gender</label>
-                        <select class="form-control" id="Qualifation" name="Qualifation">
-                          <option>
-                            Male
-                          </option>
-                          <option>
-                           Female
-                          </option>
+                        <select class="form-control" id="gender" name="gender">
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
                         </select>
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Marital Status</label>
-                         <select class="form-control" id="Qualifation" name="Qualifation">
-                          <option>
-                            Married
-                          </option>
-                          <option>
-                          Unmarried
-                          </option>
+                         <select class="form-control" id="martial_status" name="martial_status">
+                          <option value="1">Married</option>
+                          <option value="2">Unmarried</option>
                         </select>
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Mother Name</label>
+                        <input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="">
                       </div>
                     </div>
 					</div>
@@ -210,22 +208,16 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 			
 			<!-- SECTION 2 -->
             <h4></h4>
-            <section>
+            <section id="form2">
                <div class="big_form_group">
                   <div class="row">
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Qualification</label>
                         <select class="form-control" id="Qualifation" name="Qualifation">
-                          <option>
-                            Diploma
-                          </option>
-                          <option>
-                            Bachelors Degree
-                          </option>
-                          <option>
-                            Master Degree
-                          </option>
+                          <option value="1">Diploma</option>
+                          <option value="2">Bachelors Degree</option>
+                          <option value="3">Master Degree</option>
 
                         </select>
                       </div>
@@ -239,7 +231,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Relevant Experience</label>
-                        <input type="text" id="singaporeexperience" name="singaporeexperience" class="form-control" placeholder="">
+                        <input type="text" id="relevant_experience" name="relevant_experience" class="form-control" placeholder="">
                       </div>
                     </div>
 					</div>
@@ -309,16 +301,10 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Skilled Labour</label>
-                        <select class="form-control" id="skilld" name="skilld">
-                          <option>
-                            Fresh
-                          </option>
-                          <option>
-                            1nd Year
-                          </option>
-                          <option>
-                           2nd Year
-                          </option>
+                        <select class="form-control" id="skill_labour" name="skill_labour">
+                          <option value="1">Fresh</option>
+                          <option value="2">1nd Year</option>
+                          <option value="3">2nd Year</option>
 
                         </select>
                       </div>
@@ -335,33 +321,10 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Mobile</label>
-                        <input type="text" id="mobile" name="mobile" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Home Number</label>
-                        <input type="text" id="homenumber"  name="homenumber" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					   </div>
-					   
-				 <div class="row">
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Email</label>
-                        <input type="text" id="email" name="email" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
                         <label>Resume</label>
                         <input type="file" id="resume" name="resume" class="form-control" placeholder="">
                       </div>
                     </div>
-					
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Provisional Certifcate</label>
@@ -374,7 +337,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
             </section> <!-- SECTION 4 -->
             <h4></h4>
             <section> 
-			<div class="big_form_group">
+			<div class="big_form_group" id="materDegreehide1">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ">
@@ -385,32 +348,27 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Mark Sheet</label>
-                        <input type="file"  id="sheet"  name="sheet" class="form-control" id="designation"placeholder="">
-                      </div>
-                    </div> 
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Passport</label>
-                        <input type="file"  id="passport" name="passport" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					</div>
-				<div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label  >Class3 Lic</label>
-                        <input type="file"  id="demo" name="demo" class="form-control"  id="users "placeholder="">
+                        <input type="file"  id="sheet"  name="sheet" class="form-control" placeholder="">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
+                        <label  >Class3 Lic</label>
+                        <input type="file"  id="class3_lic" name="class3_lic" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					</div>
+				<div class="row">
+                    
+					<div class="col-md-4">
+                      <div class="form-group ">
                         <label  >Skilled Certicate</label>
-                        <input type="file" id="Skilled" name="Skilled" class="form-control"  id="users "placeholder="">
+                        <input type="file" id="skilled" name="skilled" class="form-control"  placeholder="">
                       </div>
                     </div>
 					</div>
 				<div class="form-group row">
-                  <div  class="col-md-9 ">
+                  <div  class="col-md-9">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </div>	
@@ -468,7 +426,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                 <i class="fa fa-hand-o-right" ></i> <a href="emp-edit-profile.html">Update profile</a>
               </li>
               <li>
-                <i class="fa fa-hand-o-right" ></i> <a href="emp-edit-password.html">Change password</a>
+                <i class="fa fa-hand-o-right" ></i> <a href="emp-edit-password.html">Change password</a>+++
               </li> -->
             </ul>
           </div>
@@ -560,7 +518,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/form.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js" defer></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
  
@@ -637,15 +595,13 @@ transitionEffect: "fade",
 enableAllSteps: true,
 transitionEffectSpeed: 500,
 onStepChanging: function (event, currentIndex, newIndex) {
-if ( newIndex === 1 ) { console.log($("#registration-form").isValid())
-	if($("#registration-form").isValid()){
-       // $("#submit-button").show()
+	console.log(newIndex);
+if ( newIndex === 1 ) { 
+	
+       $("#form2").show()
 	   $('.steps ul').addClass('step-2');
     }
-	//console.log('Test');
-	return false;
-
-} else {
+ else {
 $('.steps ul').removeClass('step-2');
 }
 if ( newIndex === 2 ) {
@@ -663,11 +619,11 @@ $('.actions ul').removeClass('step-last');
 }
 return true;
 },
-labels: {
+/*labels: {
 finish: "Order again",
 next: "Next",
 previous: "Previous"
-}
+}*/
 });
 // Custom Steps Jquery Steps
 $('.wizard > .steps li a').click(function(){
@@ -676,10 +632,10 @@ $(this).parent().prevAll().addClass('checked');
 $(this).parent().nextAll().removeClass('checked');
 });
 // Custom Button Jquery Steps
-$('.forward').click(function(){
+$('.forward1').click(function(){
 $("#wizard").steps('next');
 })
-$('.backward').click(function(){
+$('.backward2').click(function(){
 $("#wizard").steps('previous');
 })
 // Checkbox
@@ -709,10 +665,13 @@ function getJobDetails()
 {
 	console.log('55555');
 	console.log('<?php echo $job[1];?>');
-	$.post('api.php?action=getjobDetails&id='+<?php echo $job[1];?>, {} ,function(data){
+		$.post('api.php?action=getjobDetails&id='+<?php echo $job[1];?>, {} ,function(data){
 		console.log(data);
 		data=JSON.parse(data);
-		console.log(data);
+		var education = data[0]['education_requried'];
+		if(education==1){
+			$('#materDegreehide').hide();
+		}
 		$('#job_tittle').text(data[0]['job_tittle']);
 		
 		});
