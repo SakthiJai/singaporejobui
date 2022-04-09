@@ -22,10 +22,14 @@
 <link href="assets/css/select2.min.css" rel="stylesheet" />
 <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/wizard.css">
 <link rel="stylesheet" href="assets/css/color-1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-
+<?php 
+$job	= explode("?",$_SERVER['REQUEST_URI']);
+?>
 <!-- Header 01
 ================================================== -->
 <header class="header_01 header_inner">
@@ -51,138 +55,11 @@
                       <a href="contact-us.html">Contact us</a>
                     </li>
 
-
-
-
-
-
-                <!-- <li class="has-sub-menu current_page">
-                  <a href="index.html" >Home</a>
-                  <ul class="sub-menu">
-                    <li >
-                      <a href="index.html">Homepage 1</a>
-                    </li>
-                    <li>
-                      <a href="home-page-2.html">Homepage 2</a>
-                    </li>
-                    <li class="current_page">
-                      <a href="home-page-3.html">Homepage 3</a>
-                    </li>
-                    <li>
-                      <a href="home-page-4.html">Homepage 4</a>
-                    </li>
-                  </ul>
-                </li> -->
-                <!-- <li class="has-sub-menu">
-                  <a href="index.html">Job Seekers</a>
-                  <ul class="sub-menu">
-                    <li>
-                      <a href="job-seeker-dashboard.html">Job dashboard</a>
-                    </li>
-                    <li>
-                      <a href="browse-jobs.html">Browse jobs</a>
-                    </li>
-                    <li>
-                      <a href="job-single.html">Job single</a>
-                    </li>
-                    <li>
-                      <a href="my-stared-jobs.html">My stared jobs</a>
-                    </li>
-                    <li>
-                      <a href="edit-profile.html">Update my profile</a>
-                    </li>
-                    <li>
-                      <a href="edit-password.html">Change password</a>
-                    </li>
-                    <li>
-                      <a href="registration.html">Registration</a>
-                    </li>
-                    
-                  </ul>
-                </li>
-
-
-                <li class="has-sub-menu">
-                  <a href="#">For employers</a>
-                  <ul class="sub-menu">
-                    <li>
-                      <a href="job-dashboard.html">Job dashboard</a>
-                    </li>
-                    <li>
-                      <a href="post-a-job.html">Post a job</a>
-                    </li>
-                    <li>
-                      <a href="my-job-listing.html">My Jobs listing</a>
-                    </li>
-                    <li>
-                      <a href="find-staff.html">Find staff</a>
-                    </li>
-                    
-                    <li>
-                      <a href="emp-edit-profile.html">Update profile</a>
-                    </li>
-                    <li>
-                      <a href="emp-edit-password.html">Change password</a>
-                    </li>
-                    <li>
-                      <a href="emp-registration.html">Employer registration</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="has-sub-menu">
-                  <a href="#">Pages</a>
-                  <ul class="sub-menu">
-
-                    <li>
-                      <a href="blog.html">blog</a>
-                    </li>
-                    <li>
-                      <a href="blog-single.html">Blog single</a>
-                    </li>
-                    <li>
-                      <a href="contact-us.html">Contact us</a>
-                    </li>
-                    <li>
-                      <a href="plan-page.html">Membership Plans</a>
-                    </li>
-                    <li>
-                      <a href="login.html">Login</a>
-                    </li>
-                    <li>
-                      <a href="lost-password.html">Lost password</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404</a>
-                    </li> 
-                  </ul>
-                </li> -->
               </ul>
             </nav>
               <div class="ac_nav">
               <a href="register.html"><button class="btn btn-primary">Register </button></a>
-              <!--Not logedin-->
-                <!-- <div class="login_pop">
-                  <button class="btn btn-primary">Register <i class="fas fa-caret-down"></i></button>
-                  <div class="login_pop_box">
-                    <span class="twobtn_cont">
-                      <a class=" signjs_btn" href="login.html">        
-                      <span>Candidates</span> Sign up
-                      <i class="far fa-user"></i>
-                      </a>
-                    <a class=" signrs_btn" href="login.html"> <span>EMPLOYERS</span> Sign up
-                      <i class="fas fa-landmark"></i>
-                    </a>
-                    </span>
-                    <div>
-                      <span class="member_btn">Already a member?</span>
-                      <a class="lgin_btn btn btn-primary" href="login.html"> 
-                          Login
-                      </a>
-                    </div>
-                  </div>
-                </div> -->
-              <!--end logedin-->
+             
             </div>
           </div>
         </div>
@@ -211,49 +88,72 @@
           <div class="row job_section">
           <div class="col-sm-12">
             <div class="jm_headings">
-                <h5>Share Your Profile</h5>
-                <a class="btn btn-primary mypbtn" href="#">My profile</a>
+                <h5 class="col-lg-12">Applying Job : <span  id="job_tittle"></span> </h5>
+				
+                
               </div>
               <div class="section-divider">
               </div>
-               <form id="update" class="forms">
+			  <!-- JQUERY STEP -->
+
+<div class="wrapper">
+    <form action="" id="registration-form">
+        <div id="wizard">
+            <!-- SECTION 1 -->
+            <h4></h4>
+			
+            <section>
                 <div class="big_form_group">
+					
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label  >First Name</label>
-                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="">
+                        <label>First Name</label>
+                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" data-validation="first_name" data-validation-error-msg="User name has to be an alphanumeric value (3-12 chars)" >
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label>Designation</label>
-                        <input type="text"  id="designation" name="designation" class="form-control" id="designation"placeholder="">
+                        <label>Last Name</label>
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
                       </div>
-                    </div> 
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Father Name</label>
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>DOB</label>
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation"placeholder="">
+                      </div>
+                    </div>	
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Email</label>
                         <input type="text"  id="email" name="email" class="form-control" placeholder="">
                       </div>
                     </div>
-					</div>
-             <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label  >User Name *</label>
-                        <input type="text" class="form-control" name="users" id="users" placeholder="">
-                      </div>
-                    </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Pasword *</label>
+                        <label>Mobile</label>
+                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="">
+                      </div>
+                    </div>
+					</div>
+					<div class="row">
+                    
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Gender</label>
                         <input type="text" class="form-control" name="pasword" id="pasword" placeholder="">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Gender</label>
+                        <label>Marital Status</label>
                         <input type="text" class="form-control" name="gender" id="gender" placeholder="">
                       </div>
                     </div>
@@ -262,8 +162,20 @@
 					 <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label>Marital Status *</label>
-                        <input type="text" class="form-control" name="maritalstatus" id="maritalstatus" placeholder="">
+						 <label>Photo</label>
+                         <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose Your Profile Image</label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+					  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+					</label>
+                </div>
+            </div>
+
+            <!-- Uploaded image area-->
+           
+            <div class="image-area mt-1"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
                       </div>
                     </div>
 		<div class="col-sm-8">
@@ -277,7 +189,13 @@
 					
 					
                 </div>
-                <div class="big_form_group">
+                
+            </section> 
+			
+			<!-- SECTION 2 -->
+            <h4></h4>
+            <section>
+               <div class="big_form_group">
                   <div class="row">
                      <div class="col-md-4">
                       <div class="form-group ">
@@ -354,6 +272,10 @@
 					   </div>
 					   </div>
 					   
+                
+            </section> <!-- SECTION 3 -->
+            <h4></h4>
+            <section>
                 <div class="big_form_group">
                   <div class="row">
                     <div class="col-md-4">
@@ -410,7 +332,7 @@
                     </div>
 					   </div>
 					   
-					   <div class="row">
+				 <div class="row">
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Email</label>
@@ -433,8 +355,10 @@
 					   </div>
 					   
                 </div>
-				
-				<div class="big_form_group">
+            </section> <!-- SECTION 4 -->
+            <h4></h4>
+            <section> 
+			<div class="big_form_group">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ">
@@ -455,7 +379,7 @@
                       </div>
                     </div>
 					</div>
-             <div class="row">
+				<div class="row">
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label  >Class3 Lic</label>
@@ -469,15 +393,17 @@
                       </div>
                     </div>
 					</div>
-                </div>
-
-                <div class="form-group row">
+				<div class="form-group row">
                   <div  class="col-md-9 ">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
+                </div>	
                 </div>
-                
-              </form>   
+            </section>
+        </div>
+    </form>
+</div>
+                 
           </div>
           </div>  
            
@@ -617,6 +543,9 @@
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/form.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 </body>
 
 <!-- Mirrored from veepixel.com/tf/html/jodice/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:50:31 GMT -->
@@ -626,4 +555,148 @@
 	color:red !important;
 }
 .job_main_right{width:100% !important;}
+ul{ list-style: none}
+.container{max-width:80% !important;}
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    content: 'Uploaded image result';
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+}
+
 </style>
+<script>
+getJobDetails();
+$.validate({
+     modules : 'location, date, security, file',
+  form: '#registration-form',
+
+  validateOnBlur: true,
+  showHelpOnFocus: true,
+  addSuggestions: true,
+  onSuccess: function($form) {
+    console.log("success")
+    return false;
+  },
+  onError: function() {
+    console.log("Error")
+  }
+  });
+  
+$(function(){
+$("#wizard").steps({
+headerTag: "h4",
+bodyTag: "section",
+transitionEffect: "fade",
+enableAllSteps: true,
+transitionEffectSpeed: 500,
+onStepChanging: function (event, currentIndex, newIndex) {
+if ( newIndex === 1 ) { console.log($("#registration-form").isValid())
+	if($("#registration-form").isValid()){
+       // $("#submit-button").show()
+	   $('.steps ul').addClass('step-2');
+    }
+	//console.log('Test');
+	return false;
+
+} else {
+$('.steps ul').removeClass('step-2');
+}
+if ( newIndex === 2 ) {
+$('.steps ul').addClass('step-3');
+} else {
+$('.steps ul').removeClass('step-3');
+}
+
+if ( newIndex === 3 ) {
+$('.steps ul').addClass('step-4');
+$('.actions ul').addClass('step-last');
+} else {
+$('.steps ul').removeClass('step-4');
+$('.actions ul').removeClass('step-last');
+}
+return true;
+},
+labels: {
+finish: "Order again",
+next: "Next",
+previous: "Previous"
+}
+});
+// Custom Steps Jquery Steps
+$('.wizard > .steps li a').click(function(){
+$(this).parent().addClass('checked');
+$(this).parent().prevAll().addClass('checked');
+$(this).parent().nextAll().removeClass('checked');
+});
+// Custom Button Jquery Steps
+$('.forward').click(function(){
+$("#wizard").steps('next');
+})
+$('.backward').click(function(){
+$("#wizard").steps('previous');
+})
+// Checkbox
+$('.checkbox-circle label').click(function(){
+$('.checkbox-circle label').removeClass('active');
+$(this).addClass('active');
+})
+})
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imageResult')
+                .attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$(function () {
+    $('#upload').on('change', function () {
+        readURL(input);
+    });
+});
+function getJobDetails()
+{
+	console.log('55555');
+	console.log('<?php echo $job[1];?>');
+	$.post('api.php?action=getjobDetails&id='+<?php echo $job[1];?>, {} ,function(data){
+		console.log(data);
+		data=JSON.parse(data);
+		console.log(data);
+		$('#job_tittle').text(data[0]['job_tittle']);
+		
+		});
+}
+</script>

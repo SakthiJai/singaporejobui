@@ -8,6 +8,9 @@ switch($action)
 	
 	case 'getjoblist':
 		getjoblist($conn);
+	break;
+	case 'getjobDetails':
+		getjobDetails($conn,$_GET['id']);
 	break;	
 	case 'getsectorslist':
 		getsectorslist($conn);
@@ -26,9 +29,22 @@ switch($action)
 }
 function getjoblist($conn)
 {
-	$sql="SELECT * 
-		FROM job_list
-		where status IN (1,2)";
+	$sql="SELECT * FROM job_list where status =1";
+	$materialinformation	=	[];
+	if($search_result= mysqli_query($conn,$sql))
+	 {
+		 if(mysqli_num_rows($search_result)>0)
+		 {
+		 while($search_row=mysqli_fetch_array($search_result)){
+			 array_push($materialinformation,$search_row);
+		 }
+		 }
+	 }
+	 echo json_encode($materialinformation);
+}
+function getjobDetails($conn,$id)
+{
+	$sql="SELECT * FROM job_list where job_id=".$id;
 	$materialinformation	=	[];
 	if($search_result= mysqli_query($conn,$sql))
 	 {
