@@ -380,12 +380,18 @@ getsalarylist();
 function getjoblist(){
    $.post('api.php?action=getjoblist', {} ,function(data){
 		console.log(data);
+		var description = "";
 		data=JSON.parse(data);
 		console.log(data.length);
 		$('#totaljobs').append('<span>'+data.length+'&nbsp;JOBS FOUND<span>');
 		data.forEach((option)=>
 		{
-				$('#joblist').append('<li class="col-lg-6 col-md-6 col-sm-12" id="joblist"><div class="post-bx"><div><img alt src="assets/images/i-doctor.png" width="100" height="100"></div><div class="d-flex m-b30"><div class="job-post-info"><h5><a >'+option.job_tittle+'</a></h5><ul><li><i class=""></i> '+option.description+'</li></ul></div></div><div class="d-flex"><div class="job-time me-auto"><a href="javascript:void(0);"><span>'+option.serivce_charge+'</span></a></div>&nbsp;&nbsp;<div class="job-time me-auto"><a href="javascript:void(0);"><span>'+option.job_experience+'year&nbsp;Experience</span></a>&nbsp;&nbsp;<a href="javascript:void(0);"><span>Education</span></a></div></div><div><a href="apply.php?'+option.job_id+'"><button style="float: right;margin-top: -18px;" class="btn btn-success btn-sm">Apply Now</button></a></div></div></li>'); 
+		if(option.description!=null){
+			description = option.description;
+		}else{
+		description = "";
+		}
+				$('#joblist').append('<li class="col-lg-6 col-md-6 col-sm-12" id="joblist"><div class="post-bx"><div><img alt src="assets/images/i-doctor.png" width="100" height="100"></div><div class="d-flex m-b30"><div class="job-post-info"><h5><a >'+option.job_tittle+'</a></h5><ul><li><i class=""></i> '+description+'</li></ul></div></div><div class="d-flex"><div class="job-time me-auto"><a href="javascript:void(0);"><span>'+option.serivce_charge+'</span></a></div>&nbsp;&nbsp;<div class="job-time me-auto"><a href="javascript:void(0);"><span>'+option.job_experience+'year&nbsp;Experience</span></a>&nbsp;&nbsp;<a href="javascript:void(0);"><span>Education</span></a></div></div><div><a href="apply.php?'+option.job_id+'"><button style="float: right;margin-top: -18px;" class="btn btn-success btn-sm">Apply Now</button></a></div></div></li>'); 
 		});
 		});
 }

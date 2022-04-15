@@ -1,35 +1,16 @@
+console.log('test');
+$(experience_hide).hide();
 $(document).ready(function(){
-$('#registration_form').validate({
-    rules: {
-        name: 
-        {
-            required: true,
-        },
-		
-    },
-messages : {
-    name: {
-    required: "Enter Your FirstName"
-    },
-	
-	
- },
-  
-    highlight: function(element) {
-        $(element).closest('.form-control').addClass('error');
-    },
-    unhighlight: function(element) {
-        $(element).closest('.form-control').removeClass('error');
-    },
-    submitHandler: function (form) {
-            form.submit();
-     /*var formValues=$('#registration_form').serializeArray();
-	 console.log(formValues);
-      $.post('api?action=registerForminsert',formValues,function(data){
-		  console.log(data);
-			});*/
-}
- });  
-
 
   });
+  
+$('select').change(function() {
+    var data= $('#singapore_experience').find('option:selected').text();
+    console.log(data);
+   if(data=='Yes'){
+	   $(experience_hide).show();
+   }
+    else{
+		$('#experience_hide').hide();
+	}
+});

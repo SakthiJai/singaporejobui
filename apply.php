@@ -23,10 +23,15 @@
 <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/wizard.css">
-<link rel="stylesheet" href="assets/css/color-1.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+
 </head>
 <body>
 <?php 
@@ -99,86 +104,61 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 			  <!-- JQUERY STEP -->
 
 <div class="wrapper">
-    <form action="" id="registration_form" enctype="multipart/form-data" action="/api.php/registerForminsert" method="POST">
+    <form action="api.php?action=registerForminsert" id="registration_form" enctype="multipart/form-data" method="POST">
         <div id="wizard">
             <!-- SECTION 1 -->
             <h4></h4>
-			
-            <section>
+			<section>
                 <div class="big_form_group">
-					
-                  <div class="row">
+				<div class="row">
                     <div class="col-md-4">
-                      <div class="form-group ">
+                        <div class="form-group ">
                         <label>First Name</label>
-                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" >
+                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" required>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Last Name</label>
-                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
+                        
+                       <div class="form-group ">
                         <label>Father Name</label>
-                        <input type="text"  id="father_name" name="father_name" class="form-control" id="designation"placeholder="">
+                        <input type="text"  id="father_name" name="father_name" class="form-control" id="designation" placeholder="" required>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group ">
+                     <div class="form-group ">
                         <label>Email</label>
-                        <input type="text"  id="email" name="email" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
+                        <input type="text"  id="email" name="email" class="form-control" placeholder="" required>
+                      </div>  
+					 <div class="form-group ">
                         <label>Mobile</label>
-                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="">
-                      </div>
+                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="" required>
+                      </div>  
                     </div>
 					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Whatsapp Number</label>
-                        <input type="text"  id="whatsapp_number" name="whatsapp_number" class="form-control" placeholder="">
+					<div class="form-group ">
+                        <label>Last Name</label>
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation" placeholder="" required>
                       </div>
-                    </div>	
-					</div>
-					<div class="row">
-                    
-					<div class="col-md-4">
-                      <div class="form-group ">
+					  <div class="form-group ">
+                        <label>Mother Name</label>
+                        <input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="" required>
+                      </div>
+					<div class="form-group ">
                         <label>Gender</label>
-                        <select class="form-control" id="gender" name="gender">
+                        <select class="form-control" id="gender" name="gender" required>
                           <option value="1">Male</option>
                           <option value="2">Female</option>
                         </select>
                       </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Marital Status</label>
-                         <select class="form-control" id="martial_status" name="martial_status">
-                          <option value="1">Married</option>
-                          <option value="2">Unmarried</option>
-                        </select>
+					  <div class="form-group ">
+                        <label>Whatsapp Number</label>
+                        <input type="text"  id="whatsapp_number" name="whatsapp_number" class="form-control" placeholder="" required>
                       </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Mother Name</label>
-                        <input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="">
-                      </div>
-                    </div>
+                      
+                      
+                    
 					</div>
-					
-					 <div class="row">
                     <div class="col-md-4">
-                      <div class="form-group ">
+                        <div class="form-group ">
 						 <label>Photo</label>
                          <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
-                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" name="upload">
                 <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose Your Profile Image</label>
                 <div class="input-group-append">
                     <label for="upload" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
@@ -189,10 +169,55 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 
             <!-- Uploaded image area-->
            
-            <div class="image-area mt-1"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+            <div class="image-area mt-1"><img id="imageResult" src="#" alt="" style="max-width: 68%;" name="imageresult" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
                       </div>
                     </div>
-		<div class="col-sm-8">
+                </div>
+					<div class="row">
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Date of Birth</label>
+						  <input type="text" id="dateofbirth" class="datepicker form-control" placeholder="Select Date" name="dateofbirth" required>
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Age</label>
+                        <input type="text" id="age" name="age" class="form-control" placeholder="" required>
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Marital Status</label>
+                         <select class="form-control" id="martial_status" name="martial_status" required>
+                          <option value="1">Married</option>
+                          <option value="2">Unmarried</option>
+                        </select>
+                      </div>
+                    </div>
+					   </div>
+					 <div class="row">
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Instagram</label>
+                        <input type="text" id="instagram" name="instagram" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Facebook</label>
+                        <input type="text" id="facebook" name="facebook" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Twitter</label>
+                        <input type="text" id="twitter" name="twitter" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					   </div>  
+					 <div class="row">
+					<div class="col-sm-4">
 					 <div class="form-group ">
                         <label>Address</label>
                         <textarea class="form-control"  name="address" id="address">
@@ -200,7 +225,6 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       </div>
 					  </div>
 					</div>
-					
 					
                 </div>
                 
@@ -210,7 +234,57 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
             <h4></h4>
             <section id="form2">
                <div class="big_form_group">
-                  <div class="row">
+					
+					
+					   
+					   <div class="row">
+					   <div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Passport No</label>
+                        <input type="text" id="passportno"  name="passportno" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Place of Issue</label>
+                        <input type="text" id="placeofissue" name="placeofissue" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Date of Issue</label>
+                        <input type="text" id="dateofissue" name="dateofissue" class="datepicker form-control" placeholder="Select Date">
+                      </div>
+                    </div>
+					   </div>
+					   <div class="row">
+							<div class="col-md-4">
+								<div class="form-group ">
+								<label>Date of Expiry</label>
+								<input type="text" id="dateofexpiry" name="dateofexpiry" class="datepicker form-control" placeholder="Select Date">
+								</div>
+							</div>
+							<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Indian Driving License</label>
+                        <input type="text" id="drivinglicense" name="drivinglicense" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group ">
+                        <label >Other Country Driving License</label>
+                        <input type="text" id="singaporedriving" name="singaporedriving" class="form-control"  >
+                      </div>
+                    </div>
+					   </div>
+					   </div>
+					   
+                
+            </section> <!-- SECTION 3 -->
+            <h4></h4>
+            <section>
+                <div class="big_form_group">
+				<div class="row">
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Qualification</label>
@@ -228,110 +302,45 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         <input type="text" id="totalExperience"  name="totalExperience" class="form-control" placeholder="">
                       </div>
                     </div> 
-                    <div class="col-md-4">
+					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Relevant Experience</label>
                         <input type="text" id="relevant_experience" name="relevant_experience" class="form-control" placeholder="">
                       </div>
                     </div>
+                    
 					</div>
-					<div class="row">
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Date of Birth</label>
-                        <input type="date" id="dateofbirth" name="dateofbirth" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Age</label>
-                        <input type="text" id="age" name="age" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Passport No</label>
-                        <input type="text" id="passportno"  name="passportno" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					   </div>
-					   
-					   <div class="row">
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Place of Issue</label>
-                        <input type="text" id="placeofissue" name="placeofissue" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Date of Issue</label>
-                        <input type="date" id="dateofissue" name="dateofissue" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Date of Expiry</label>
-                        <input type="date" id="dateofexpiry" name="dateofexpiry" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					   </div>
-					   </div>
-					   
-                
-            </section> <!-- SECTION 3 -->
-            <h4></h4>
-            <section>
-                <div class="big_form_group">
                   <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Indian Driving License</label>
-                        <input type="text" id="drivinglicense" name="drivinglicense" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label >Other Country Driving License</label>
-                        <input type="text" id="singaporedriving" name="singaporedriving" class="form-control"  >
-                      </div>
-                    </div> 
+                     
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Skilled Labour</label>
                         <select class="form-control" id="skill_labour" name="skill_labour">
-                          <option value="1">Fresh</option>
-                          <option value="2">1nd Year</option>
-                          <option value="3">2nd Year</option>
+                          <option value="1">Fresher</option>
+                          <option value="2">Experience</option>
 
                         </select>
                       </div>
                     </div>
-                    
+                    <div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Singapore Experience</label>
+                        <select class="form-control" id="singapore_experience" name="singapore_experience">
+                          <option value="1">Yes</option>
+                          <option value="2">No</option>
+                        </select>
+                      </div>
+                    </div> 
+					<div class="col-md-4" id="experience_hide">
+                      <div class="form-group">
+                        <label>If Yes</label>
+                        <input type="text" id="singapore_experience_details" name="singapore_experience_details" class="form-control" placeholder="">
+                      </div>
+                    </div>
                   </div>
 				  
-				   <div class="row">
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Skype Id</label>
-                        <input type="text" id="skypeid" name="skypeid" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Resume</label>
-                        <input type="file" id="resume" name="resume" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Provisional Certifcate</label>
-                        <input type="file" id="certifcate" name="certifcate" class="form-control" placeholder="">
-                      </div>
-                    </div>
-					   </div>
+				   
+					  
 					   
                 </div>
             </section> <!-- SECTION 4 -->
@@ -339,41 +348,145 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
             <section> 
 			<div class="big_form_group" id="materDegreehide1">
                   <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group ">
-                        <label>MasterDegree/Diploma</label>
-                        <input type="file"  id="degree"  name="degree" class="form-control" placeholder="">
+				  <div class="col-md-4">
+					  <div class="form-group">
+						 <label>Resume</label>
+                         <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="resume" type="file"  class="form-control" name="resume">
+							<label id="resume-label" for="resume" class="font-weight-light text-muted">Choose Your Resume</label>
+							<div class="input-group-append">
+								<label for="resume" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" ><i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+					</div>  
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group">
+                        <label>10th Certficate</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="certficate_10th" type="file"  class="form-control border-0" name="certficate_10th">
+							<label id="certficate_10th-label" for="certficate_10th" class="font-weight-light text-muted">Choose Your Certficate</label>
+							<div class="input-group-append">
+								<label for="certficate_10th" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label>Mark Sheet</label>
-                        <input type="file"  id="sheet"  name="sheet" class="form-control" placeholder="">
+                        <label>12th Certficate</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="certificate_12th" type="file"  class="form-control border-0" name="certificate_12th">
+							<label id="certificate_12th-label" for="certificate_12th" class="font-weight-light text-muted">Choose Your Certficate</label>
+							<div class="input-group-append">
+								<label for="certificate_12th" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+                      </div>
+                    </div>
+					</div>
+					<div class="row">
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Diploma</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="diploma" type="file"  class="form-control border-0" name="diploma">
+							<label id="diploma-label" for="diploma" class="font-weight-light text-muted">Choose Your Certficate</label>
+							<div class="input-group-append">
+								<label for="diploma" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label  >Class3 Lic</label>
-                        <input type="file"  id="class3_lic" name="class3_lic" class="form-control" placeholder="">
+                        <label>Bachelors Degree</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="bachelorsdegree" type="file"  class="form-control border-0" name="bachelorsdegree">
+							<label id="bachelorsdegree-label" for="bachelorsdegree" class="font-weight-light text-muted">Choose Your Certficate</label>
+							<div class="input-group-append">
+								<label for="bachelorsdegree" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
                       </div>
                     </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>MasterDegree</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="degree" type="file" onchange="readURL(this);" class="form-control border-0" name="degree">
+							<label id="degree-label" for="degree" class="font-weight-light text-muted">Choose Your Certificate</label>
+							<div class="input-group-append">
+								<label for="degree" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+                      </div>
+                    </div>
+					
 					</div>
 				<div class="row">
-                    
-					<div class="col-md-4">
+				<div class="col-md-4">
                       <div class="form-group ">
                         <label  >Skilled Certicate</label>
-                        <input type="file" id="skilled" name="skilled" class="form-control"  placeholder="">
-                      </div>
-                    </div>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="skilled" type="file"  class="form-control border-0" name="skilled">
+							<label id="skilled-label" for="skilled" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<div class="input-group-append">
+								<label for="skilled" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
 					</div>
-				<div class="form-group row">
+                      </div>
+                 </div>
+				<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Mark Sheet</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="sheet" type="file"  class="form-control border-0" name="sheet">
+							<label id="sheet-label" for="sheet" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<div class="input-group-append">
+								<label for="sheet" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+                      </div>
+                 </div>
+				<div class="col-md-4">
+                      <div class="form-group ">
+                        <label  >Class3 Lic</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="class3_lic" type="file"  class="form-control border-0" name="class3_lic">
+							<label id="class3_lic_label" for="class3_lic" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<div class="input-group-append">
+								<label for="class3_lic" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+                      </div>
+                </div> 
+					</div>
+                </div>
+            </section>
+			<div class="form-group row">
                   <div  class="col-md-9">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </div>	
-                </div>
-            </section>
         </div>
     </form>
 </div>
@@ -510,17 +623,14 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 
 <!-- Scripts
 ================================================== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js" defer></script>
-<script src="assets/js/jquery-3.4.1.min.js"></script>
-<script src="assets/js/select2.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js" ></script>
+
 <script src="assets/js/form.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js" defer></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js" defer ></script>
+
  
 </body>
 
@@ -536,14 +646,111 @@ ul{ list-style: none}
 #upload {
     opacity: 0;
 }
-
+#certifcate{
+    opacity: 0;
+}
+#resume{
+    opacity: 0;  
+}
+#certificate_8th{
+    opacity: 0;
+}
+#certficate_10th{
+    opacity: 0;
+}
+#certificate_12th{
+    opacity: 0;
+}
+#bachelorsdegree{
+    opacity: 0;
+}
+#degree{
+    opacity: 0;
+}
+#skilled{
+    opacity: 0;
+}
+#sheet{
+    opacity: 0;
+}
+#class3_lic{
+    opacity: 0;
+}
+#diploma{
+    opacity: 0;
+}
+#diploma-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#certificate_8th-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
 #upload-label {
     position: absolute;
     top: 50%;
     left: 1rem;
     transform: translateY(-50%);
 }
-
+#certifcate-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#resume-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#certficate_10th-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#certificate_12th-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#bachelorsdegree-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#degree-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#skilled-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#sheet-label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+#class3_lic_label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
 .image-area {
     border: 2px dashed rgba(255, 255, 255, 0.7);
     padding: 1rem;
@@ -568,9 +775,83 @@ ul{ list-style: none}
     position: relative;
 }
 
+
+.datepicker-dropdown {
+    top: 0;
+    left: 0
+}
+
+.datepicker table tr td.today,
+span.focused {
+    border-radius: 50% !important
+}
+
+thead tr:nth-child(2) {
+    background-color: #FF80AB !important
+}
+
+thead tr:nth-child(3) th {
+    color: #FF80AB !important;
+    padding-top: 20px;
+    padding-bottom: 10px
+}
+
+.dow,
+.old-day,
+.day,
+.new-day {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 0px !important
+}
+
+.old-day:hover,
+.day:hover,
+.new-day:hover,
+.month:hover,
+.year:hover,
+.decade:hover,
+.century:hover {
+    border-radius: 50% !important;
+    background-color: #eee
+}
+
+.active {
+    border-radius: 50% !important;
+    background-image: linear-gradient(#90CAF9, #64B5F6) !important;
+    color: #fff !important
+}
+
+.prev,
+.next,
+.datepicker-switch {
+    border-radius: 0 !important;
+    padding: 20px 10px !important;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.8
+}
+
+.prev:hover,
+.next:hover,
+.datepicker-switch:hover {
+    background-color: inherit !important;
+    opacity: 1
+}
 </style>
 <script>
 getJobDetails();
+  $(document).ready(function(){
+
+$('.datepicker').datepicker({
+format: 'dd-mm-yyyy',
+todayHighlight: true,
+toggleActive: true
+});
+
+});
+
 $.validate({
      modules : 'location, date, security, file',
   form: '#registration-form',
@@ -655,12 +936,18 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-$(function () {
-    $('#upload').on('change', function () {
-        readURL(input);
-    });
-});
+        reader.onload = function (e) {
+            $('#resume')
+                .attr(e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 function getJobDetails()
 {
 	console.log('55555');
@@ -669,51 +956,12 @@ function getJobDetails()
 		console.log(data);
 		data=JSON.parse(data);
 		var education = data[0]['education_requried'];
-		if(education==1){
-			$('#materDegreehide').hide();
+		if(education!=1){
+			$('#materDegreehide1').hide();
 		}
 		$('#job_tittle').text(data[0]['job_tittle']);
 		
 		});
 }
-$(document).ready(function() {
-    $('#date_picker')
-        .date_picker({
-            format: 'mm/dd/yyyy'
-        })
-        .on('changeDate', function(e) {
-            // Revalidate the date field
-            $('#eventForm').formValidation('revalidateField', 'date');
-        });
-
-    $('#eventForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            name: {
-                validators: {
-                    notEmpty: {
-                        message: 'The name is required'
-                    }
-                }
-            },
-            date: {
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required'
-                    },
-                    date: {
-                        format: 'MM/DD/YYYY',
-                        message: 'The date is not a valid'
-                    }
-                }
-            }
-        }
-    });
-});
-
+$('.input-group.date').datepicker({format: "dd.mm.yyyy"}); 
 </script>
