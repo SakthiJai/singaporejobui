@@ -159,6 +159,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="form-group ">
                         <label>Gender</label>
                         <select class="form-control" id="gender" name="gender" required>
+						<option value="">Select</option>
                           <option value="1">Male</option>
                           <option value="2">Female</option>
                         </select>
@@ -207,6 +208,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       <div class="form-group ">
                         <label>Marital Status</label>
                          <select class="form-control" id="martial_status" name="martial_status" required>
+						 <option value="">Select</option>
                           <option value="1">Married</option>
                           <option value="2">Unmarried</option>
                         </select>
@@ -318,6 +320,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       <div class="form-group ">
                         <label >Indian Driving License</label>
                         <select class="form-control" id="Qualifation" name="Qualifation">
+						<option value="">Select</option>
                           <option value="1">Diploma</option>
                           <option value="2">Bachelors Degree</option>
                           <option value="3">Master Degree</option>
@@ -345,6 +348,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       <div class="form-group ">
                         <label >Skilled Labour</label>
                         <select class="form-control" id="skilld" name="skilld">
+						<option value="">Select</option>
                           <option value="1">Fresher</option>
                           <option value="2">Experience</option>
 
@@ -355,6 +359,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       <div class="form-group ">
                         <label>Singapore Experience</label>
                         <select class="form-control" id="singapore_experience" name="singapore_experience">
+						<option value="">Select</option>
                           <option value="1">Yes</option>
                           <option value="2">No</option>
                         </select>
