@@ -114,7 +114,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							
 				</div>
 				<div class="col-12 mx-auto">
-					<div class="accordion" id="accordionExample">
+					<div class="accordion" id="accordionExample" style="font-family: 'Roboto Mono', monospace;	">
 						<div class="card">
 							<div class="card-header" id="headingOne">
 								<h5 class="mb-0">
@@ -306,7 +306,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							<div class="card-header" id="headingThree">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="border:none;">
-							  <i class="fa fa-angle-double-right mr-3"></i>Work Experience.
+							  <i class="fa fa-angle-double-right mr-3"></i>Upload Statements.
 							</button>
 						  </h5>
 							</div>
@@ -520,6 +520,23 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       </div>
                 </div> 
 					</div>
+					<div class="row">
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label style="margin-left:19px;">Others</label>
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+							<input id="skilled" type="file"  class="form-control border-0" name="skilled">
+							<label id="skilled-label" for="skilled" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<div class="input-group-append">
+								<label for="skilled" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
+								</label>
+							</div>
+					</div>
+                      </div>
+                 </div>
+				 </div>
+					
                 </div>
 				<div class="form-group row">
                   <div  class="col-md-9">
@@ -729,7 +746,7 @@ section{
 }
 .job_main_right{width:100% !important;}
 ul{ list-style: none}
-.container{max-width:96% !important;}
+.container{max-width:100% !important;}
 #upload {
     opacity: 0;
 }
@@ -928,6 +945,9 @@ thead tr:nth-child(3) th {
 }
 .card-header{
 	background: linear-gradient(to left, #185a9d, #43cea2) !important;
+}
+.form-group label{
+	font-size:12px !important;
 }
 </style>
 <script>
