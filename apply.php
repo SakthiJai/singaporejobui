@@ -24,7 +24,8 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/wizard.css">
 
-
+<link rel="stylesheet" href="assets/css/color-1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <script src="assets/js/jquery-3.4.1.min.js"></script>
@@ -105,11 +106,27 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 
 <div class="wrapper">
     <form action="api.php?action=registerForminsert" id="registration_form" enctype="multipart/form-data" method="POST">
-        <div id="wizard">
-            <!-- SECTION 1 -->
-            <h4></h4>
-			<section>
-                <div class="big_form_group">
+        <div class="container-fluid bg-gray" id="accordion-style-1">
+	<div class="container">
+		<section>
+			<div class="row">
+				<div class="col-12">
+							
+				</div>
+				<div class="col-12 mx-auto">
+					<div class="accordion" id="accordionExample">
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h5 class="mb-0">
+							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="border:none;">
+							  <i class="fa fa-angle-double-right mr-3"></i>Personal Information
+							</button>
+						  </h5>
+							</div>
+
+							<div id="collapseOne" class="collapse show fade" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									 <div class="big_form_group">
 				<div class="row">
                     <div class="col-md-4">
                         <div class="form-group ">
@@ -157,7 +174,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                         <div class="form-group ">
 						 <label>Photo</label>
-                         <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+                         <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="margin-top:-12px;">
                 <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" name="upload">
                 <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose Your Profile Image</label>
                 <div class="input-group-append">
@@ -217,7 +234,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					   </div>  
 					 <div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 					 <div class="form-group ">
                         <label>Address</label>
                         <textarea class="form-control"  name="address" id="address">
@@ -227,17 +244,21 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					</div>
 					
                 </div>
-                
-            </section> 
-			
-			<!-- SECTION 2 -->
-            <h4></h4>
-            <section id="form2">
-               <div class="big_form_group">
-					
-					
-					   
-					   <div class="row">
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="border:none;">
+							 <i class="fa fa-angle-double-right mr-3"></i>Singapora Detalis.
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseTwo" class="collapse fade" aria-labelledby="headingTwo" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="big_form_group">
+					   <div class="row">			
 					   <div class="col-md-4">
                       <div class="form-group ">
                         <label>Passport No</label>
@@ -278,16 +299,24 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					   </div>
 					   </div>
-					   
-                
-            </section> <!-- SECTION 3 -->
-            <h4></h4>
-            <section>
-                <div class="big_form_group">
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="border:none;">
+							  <i class="fa fa-angle-double-right mr-3"></i>Work Experience.
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseThree" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="big_form_group">
 				<div class="row">
                      <div class="col-md-4">
                       <div class="form-group ">
-                        <label >Qualification</label>
+                        <label >Indian Driving License</label>
                         <select class="form-control" id="Qualifation" name="Qualifation">
                           <option value="1">Diploma</option>
                           <option value="2">Bachelors Degree</option>
@@ -298,8 +327,8 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label>Total Experience</label>
-                        <input type="text" id="totalExperience"  name="totalExperience" class="form-control" placeholder="">
+                        <label>Other Country Driving License</label>
+                        <input type="text" id="singaporedriving"  name="singaporedriving" class="form-control" placeholder="">
                       </div>
                     </div> 
 					<div class="col-md-4">
@@ -315,7 +344,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Skilled Labour</label>
-                        <select class="form-control" id="skill_labour" name="skill_labour">
+                        <select class="form-control" id="skilld" name="skilld">
                           <option value="1">Fresher</option>
                           <option value="2">Experience</option>
 
@@ -343,14 +372,25 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					  
 					   
                 </div>
-            </section> <!-- SECTION 4 -->
-            <h4></h4>
-            <section> 
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingFour">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="border:none;">
+							  <i class="fa fa-angle-double-right mr-3"></i> Upload Statement.
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseFour" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionExample">
+								<div class="card-body">
+									<section> 
 			<div class="big_form_group" id="materDegreehide1">
                   <div class="row">
 				  <div class="col-md-4">
 					  <div class="form-group">
-						 <label>Resume</label>
+						 <label style="margin-left:19px;">Resume</label>
                          <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="resume" type="file"  class="form-control" name="resume">
 							<label id="resume-label" for="resume" class="font-weight-light text-muted">Choose Your Resume</label>
@@ -364,7 +404,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					<div class="col-md-4">
                       <div class="form-group">
-                        <label>10th Certficate</label>
+                        <label style="margin-left:19px;">10th Certficate</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="certficate_10th" type="file"  class="form-control border-0" name="certficate_10th">
 							<label id="certficate_10th-label" for="certficate_10th" class="font-weight-light text-muted">Choose Your Certficate</label>
@@ -378,7 +418,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label>12th Certficate</label>
+                        <label style="margin-left:19px;">12th Certficate</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="certificate_12th" type="file"  class="form-control border-0" name="certificate_12th">
 							<label id="certificate_12th-label" for="certificate_12th" class="font-weight-light text-muted">Choose Your Certficate</label>
@@ -394,7 +434,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="row">
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Diploma</label>
+                        <label style="margin-left:19px;">Diploma</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="diploma" type="file"  class="form-control border-0" name="diploma">
 							<label id="diploma-label" for="diploma" class="font-weight-light text-muted">Choose Your Certficate</label>
@@ -408,7 +448,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Bachelors Degree</label>
+                        <label style="margin-left:19px;">Bachelors Degree</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="bachelorsdegree" type="file"  class="form-control border-0" name="bachelorsdegree">
 							<label id="bachelorsdegree-label" for="bachelorsdegree" class="font-weight-light text-muted">Choose Your Certficate</label>
@@ -422,7 +462,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>MasterDegree</label>
+                        <label style="margin-left:19px;">MasterDegree</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="degree" type="file" onchange="readURL(this);" class="form-control border-0" name="degree">
 							<label id="degree-label" for="degree" class="font-weight-light text-muted">Choose Your Certificate</label>
@@ -439,7 +479,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 				<div class="row">
 				<div class="col-md-4">
                       <div class="form-group ">
-                        <label  >Skilled Certicate</label>
+                        <label style="margin-left:19px;">Skilled Certicate</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="skilled" type="file"  class="form-control border-0" name="skilled">
 							<label id="skilled-label" for="skilled" class="font-weight-light text-muted">Choose Your Profile Image</label>
@@ -453,7 +493,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                  </div>
 				<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Mark Sheet</label>
+                        <label style="margin-left:19px;">Mark Sheet</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="sheet" type="file"  class="form-control border-0" name="sheet">
 							<label id="sheet-label" for="sheet" class="font-weight-light text-muted">Choose Your Profile Image</label>
@@ -467,7 +507,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                  </div>
 				<div class="col-md-4">
                       <div class="form-group ">
-                        <label  >Class3 Lic</label>
+                        <label style="margin-left:19px;">Class3 Lic</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="class3_lic" type="file"  class="form-control border-0" name="class3_lic">
 							<label id="class3_lic_label" for="class3_lic" class="font-weight-light text-muted">Choose Your Profile Image</label>
@@ -481,13 +521,21 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                 </div> 
 					</div>
                 </div>
-            </section>
-			<div class="form-group row">
+				<div class="form-group row">
                   <div  class="col-md-9">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
-                </div>	
-        </div>
+                </div>
+            </section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</section>
+	</div>
+</div>
     </form>
 </div>
                  
@@ -637,12 +685,51 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 <!-- Mirrored from veepixel.com/tf/html/jodice/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:50:31 GMT -->
 </html>
 <style>
+
+section{
+	padding: 60px 0;
+}
+
+#accordion-style-1 h1,
+#accordion-style-1 a{
+   color: #3fc199;
+}
+#accordion-style-1 .btn-link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-weight:800;
+	padding-left: 25px;
+}
+
+#accordion-style-1 .card-body {
+    border-top: 2px solid #007b5e;
+}
+
+#accordion-style-1 .card-header .btn.collapsed .fa.main{
+	display:none;
+}
+
+#accordion-style-1 .card-header .btn .fa.main{
+	background: #007b5e;
+    padding: 13px 11px;
+    color: #ffffff;
+    width: 35px;
+    height: 41px;
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+	display:block;
+}
 .error{
 	color:red !important;
 }
 .job_main_right{width:100% !important;}
 ul{ list-style: none}
-.container{max-width:80% !important;}
+.container{max-width:96% !important;}
 #upload {
     opacity: 0;
 }
@@ -838,6 +925,9 @@ thead tr:nth-child(3) th {
 .datepicker-switch:hover {
     background-color: inherit !important;
     opacity: 1
+}
+.card-header{
+	background: linear-gradient(to left, #185a9d, #43cea2) !important;
 }
 </style>
 <script>
