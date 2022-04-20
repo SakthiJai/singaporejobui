@@ -116,7 +116,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 				<div class="col-12 mx-auto">
 					<div class="accordion" id="accordionExample" style="font-family: 'Roboto Mono', monospace;	">
 						<div class="card">
-							<div class="card-header" id="headingOne">
+							<div class="card-header" id="headingOne" style="height:46px;">
 								<h5 class="mb-0">
 							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="border:none;">
 							  <i class="fa fa-angle-double-right mr-3"></i>Personal Information
@@ -131,43 +131,45 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                         <div class="form-group ">
                         <label>First Name</label>
-                        <input type="text"  id="first_name" name="first_name" class="form-control" placeholder="" required>
+                        <input type="text"  id="first_name" name="first_name"  class="form-control" placeholder="">
                       </div>
                         
                        <div class="form-group ">
                         <label>Father Name</label>
-                        <input type="text"  id="father_name" name="father_name" class="form-control" id="designation" placeholder="" required>
+                        <input type="text"  id="father_name" name="father_name" class="form-control" id="designation" placeholder="">
                       </div>
                      <div class="form-group ">
                         <label>Email</label>
-                        <input type="text"  id="email" name="email" class="form-control" placeholder="" required>
+                        <input type="text"  id="email" name="email" class="form-control" placeholder="">
                       </div>  
 					 <div class="form-group ">
                         <label>Mobile</label>
-                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="" required>
+                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="">
                       </div>  
                     </div>
 					<div class="col-md-4">
 					<div class="form-group ">
                         <label>Last Name</label>
-                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation" placeholder="" required>
+                        <input type="text"  id="last_name" name="last_name" class="form-control" id="designation" placeholder="">
                       </div>
 					  <div class="form-group ">
                         <label>Mother Name</label>
-                        <input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="" required>
+                       <input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="">
                       </div>
 					<div class="form-group ">
                         <label>Gender</label>
-                        <select class="form-control" id="gender" name="gender" required>
+                        <select class="form-control" id="gender" name="gender">
 						<option value="">Select</option>
                           <option value="1">Male</option>
                           <option value="2">Female</option>
                         </select>
                       </div>
+					  
 					  <div class="form-group ">
                         <label>Whatsapp Number</label>
-                        <input type="text"  id="whatsapp_number" name="whatsapp_number" class="form-control" placeholder="" required>
+                        <input type="text"  id="whatsapp_number" name="whatsapp_number" class="form-control" placeholder="">
                       </div>
+					
                       
                       
                     
@@ -176,7 +178,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         <div class="form-group ">
 						 <label>Photo</label>
                          <div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="margin-top:-12px;">
-                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" name="upload">
+                <input  type="file" onchange="readURL(this);" id="upload" name="upload" class="form-control border-0" >
                 <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose Your Profile Image</label>
                 <div class="input-group-append">
                     <label for="upload" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
@@ -195,42 +197,42 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Date of Birth</label>
-						  <input type="text" id="dateofbirth" class="datepicker form-control" placeholder="Select Date" name="dateofbirth" required>
+						  <input type="text" id="dateofbirth" class="datepicker form-control" placeholder="Select Date" name="dateofbirth">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Age</label>
-                        <input type="text" id="age" name="age" class="form-control" placeholder="" required>
+                        <input type="text" id="age" name="age" class="form-control" placeholder="">
                       </div>
                     </div>
-					<div class="col-md-4">
+				<!---	<div class="col-md-4">
                       <div class="form-group ">
                         <label>Marital Status</label>
-                         <select class="form-control" id="martial_status" name="martial_status" required>
+                         <select class="form-control" id="martial_status" name="martial_status">
 						 <option value="">Select</option>
                           <option value="1">Married</option>
                           <option value="2">Unmarried</option>
                         </select>
                       </div>
-                    </div>
+                    </div>--->
 					   </div>
 					 <div class="row">
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Instagram</label>
+                        <label>Instagram Url</label>
                         <input type="text" id="instagram" name="instagram" class="form-control" placeholder="">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Facebook</label>
+                        <label>Facebook Url</label>
                         <input type="text" id="facebook" name="facebook" class="form-control" placeholder="">
                       </div>
                     </div>
 					<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Twitter</label>
+                        <label>Twitter Url</label>
                         <input type="text" id="twitter" name="twitter" class="form-control" placeholder="">
                       </div>
                     </div>
@@ -239,7 +241,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-sm-12">
 					 <div class="form-group ">
                         <label>Address</label>
-                        <textarea class="form-control"  name="address" id="address">
+                        <textarea   id="address"  name="address"  class="form-control" placeholder="">
                         </textarea>
                       </div>
 					  </div>
@@ -250,14 +252,14 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							</div>
 						</div>
 						<div class="card">
-							<div class="card-header" id="headingTwo">
+							<div class="card-header" id="headingTwo" style="height:46px;">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="border:none;">
-							 <i class="fa fa-angle-double-right mr-3"></i>Singapora Detalis.
+							 <i class="fa fa-angle-double-right mr-3"></i>Singapora Detalis
 							</button>
 						  </h5>
 							</div>
-							<div id="collapseTwo" class="collapse fade" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div id="collapseTwo" class="collapse show fade" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="big_form_group">
 					   <div class="row">			
@@ -289,13 +291,13 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							</div>
 							<div class="col-md-4">
                       <div class="form-group ">
-                        <label>Indian Driving License</label>
+                        <label>Driving License</label>
                         <input type="text" id="drivinglicense" name="drivinglicense" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group ">
-                        <label >Other Country Driving License</label>
+                        <label >Singapora Driving License</label>
                         <input type="text" id="singaporedriving" name="singaporedriving" class="form-control"  >
                       </div>
                     </div>
@@ -305,20 +307,20 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							</div>
 						</div>
 						<div class="card">
-							<div class="card-header" id="headingThree">
+							<div class="card-header" id="headingThree" style="height:46px;">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="border:none;">
-							  <i class="fa fa-angle-double-right mr-3"></i>Upload Statements.
+							  <i class="fa fa-angle-double-right mr-3"></i> Personal Experience
 							</button>
 						  </h5>
 							</div>
-							<div id="collapseThree" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div id="collapseThree" class="collapse show fade" aria-labelledby="headingThree" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="big_form_group">
 				<div class="row">
                      <div class="col-md-4">
                       <div class="form-group ">
-                        <label >Indian Driving License</label>
+                        <label >Degree</label>
                         <select class="form-control" id="Qualifation" name="Qualifation">
 						<option value="">Select</option>
                           <option value="1">Diploma</option>
@@ -331,7 +333,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label>Other Country Driving License</label>
-                        <input type="text" id="singaporedriving"  name="singaporedriving" class="form-control" placeholder="">
+                        <input type="text" id="other_country"  name="other_country" class="form-control" placeholder="">
                       </div>
                     </div> 
 					<div class="col-md-4">
@@ -381,14 +383,14 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 							</div>
 						</div>
 						<div class="card">
-							<div class="card-header" id="headingFour">
+							<div class="card-header" id="headingFour" style="height:46px;">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="border:none;">
-							  <i class="fa fa-angle-double-right mr-3"></i> Upload Statement.
+							  <i class="fa fa-angle-double-right mr-3"></i> Upload Docments 
 							</button>
 						  </h5>
 							</div>
-							<div id="collapseFour" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionExample">
+							<div id="collapseFour" class="collapse  show fade" aria-labelledby="headingFour" data-parent="#accordionExample">
 								<div class="card-body">
 									<section> 
 			<div class="big_form_group" id="materDegreehide1">
@@ -410,7 +412,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group">
                         <label style="margin-left:19px;">10th Certficate</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:102%;">
 							<input id="certficate_10th" type="file"  class="form-control border-0" name="certficate_10th">
 							<label id="certficate_10th-label" for="certficate_10th" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -424,7 +426,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label style="margin-left:19px;">12th Certficate</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:387px; margin-left:-10px;">
 							<input id="certificate_12th" type="file"  class="form-control border-0" name="certificate_12th">
 							<label id="certificate_12th-label" for="certificate_12th" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -454,7 +456,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label style="margin-left:19px;">Bachelors Degree</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:104%;">
 							<input id="bachelorsdegree" type="file"  class="form-control border-0" name="bachelorsdegree">
 							<label id="bachelorsdegree-label" for="bachelorsdegree" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -543,11 +545,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 				 </div>
 					
                 </div>
-				<div class="form-group row">
-                  <div  class="col-md-9">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </div>
+				
             </section>
 								</div>
 							</div>
@@ -556,6 +554,11 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 				</div>	
 			</div>
 		</section>
+		<div class="form-group row">
+                  <div  class="col-md-9">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
 	</div>
 </div>
     </form>
@@ -695,12 +698,12 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 ================================================== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js" ></script>
 
-<script src="assets/js/form.js"></script>
+
 <script src="assets/js/owl.carousel.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js" defer ></script>
 
+
+<script src="assets/js/form.js"></script>
  
 </body>
 
@@ -708,9 +711,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 </html>
 <style>
 
-section{
-	padding: 60px 0;
-}
+
 
 #accordion-style-1 h1,
 #accordion-style-1 a{
@@ -967,79 +968,11 @@ toggleActive: true
 
 });
 
-$.validate({
-     modules : 'location, date, security, file',
-  form: '#registration-form',
 
-  validateOnBlur: true,
-  showHelpOnFocus: true,
-  addSuggestions: true,
-  onSuccess: function($form) {
-    console.log("success")
-    return false;
-  },
-  onError: function() {
-    console.log("Error")
-  }
-  });
   
-$(function(){
-$("#wizard").steps({
-headerTag: "h4",
-bodyTag: "section",
-transitionEffect: "fade",
-enableAllSteps: true,
-transitionEffectSpeed: 500,
-onStepChanging: function (event, currentIndex, newIndex) {
-	console.log(newIndex);
-if ( newIndex === 1 ) { 
-	
-       $("#form2").show()
-	   $('.steps ul').addClass('step-2');
-    }
- else {
-$('.steps ul').removeClass('step-2');
-}
-if ( newIndex === 2 ) {
-$('.steps ul').addClass('step-3');
-} else {
-$('.steps ul').removeClass('step-3');
-}
 
-if ( newIndex === 3 ) {
-$('.steps ul').addClass('step-4');
-$('.actions ul').addClass('step-last');
-} else {
-$('.steps ul').removeClass('step-4');
-$('.actions ul').removeClass('step-last');
-}
-return true;
-},
-/*labels: {
-finish: "Order again",
-next: "Next",
-previous: "Previous"
-}*/
-});
 // Custom Steps Jquery Steps
-$('.wizard > .steps li a').click(function(){
-$(this).parent().addClass('checked');
-$(this).parent().prevAll().addClass('checked');
-$(this).parent().nextAll().removeClass('checked');
-});
-// Custom Button Jquery Steps
-$('.forward1').click(function(){
-$("#wizard").steps('next');
-})
-$('.backward2').click(function(){
-$("#wizard").steps('previous');
-})
-// Checkbox
-$('.checkbox-circle label').click(function(){
-$('.checkbox-circle label').removeClass('active');
-$(this).addClass('active');
-})
-})
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
