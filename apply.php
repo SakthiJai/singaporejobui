@@ -321,19 +321,20 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                      <div class="col-md-4">
                       <div class="form-group ">
                         <label >Degree</label>
-                        <select class="form-control" id="Qualifation" name="Qualifation">
+                        <select class="form-control" id="Qualifation" name="Qualifation" onchange="getdegreecat(this.value)">
 						<option value="">Select</option>
                           <option value="1">Diploma</option>
                           <option value="2">Bachelors Degree</option>
                           <option value="3">Master Degree</option>
-
                         </select>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label>Degree Name</label>
-                        <input type="text" id="degree_name" name="degree_name" class="form-control" placeholder="">
+						<select class="form-control" id="degree_name" name="degree_name">
+						<option value="">Select</option>
+                        </select>
                       </div>
                     </div>
 					<div class="col-md-4 ">
@@ -1034,7 +1035,6 @@ function getJobDetails()
 	console.log('55555');
 	console.log('<?php echo $job[1];?>');
 		$.post('api.php?action=getjobDetails&id='+<?php echo $job[1];?>, {} ,function(data){
-		console.log(data);
 		data=JSON.parse(data);
 		var education = data[0]['is_edu_required'];
 		if(education!=1){
@@ -1045,4 +1045,15 @@ function getJobDetails()
 		});
 }
 $('.input-group.date').datepicker({format: "dd.mm.yyyy"}); 
+
+function getdegreecat(value){
+	$.post('api.php?action=getdegreecat&id='+value, {} ,function(data){
+		data=JSON.parse(data);
+		console.log(data.length);
+		data.forEach((option)=>
+		{
+		   $('#degree_name').append('<option value="'+option.id+'">'+option.degree_name+'</option>'); 
+		});
+		});
+}
 </script>

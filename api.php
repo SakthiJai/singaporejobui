@@ -29,6 +29,9 @@ switch($action)
 	case'registerForminsert':
 		registerForminsert($conn,$_POST);
 	break;
+	case'getdegreecat':
+		getdegreecat($conn,$_GET['id']);
+	break;
 	default:
 	break;
 }
@@ -330,5 +333,20 @@ if($_FILES['diploma']['name']!=""){
 	else{
 		echo "insert issue";
 	}
+}
+function getdegreecat($conn,$id)
+{
+	 $sql="SELECT * FROM education_requeried where degree_category ='".$id."'";
+	$materialinformation	=	[];
+	if($search_result= mysqli_query($conn,$sql))
+	 {
+		 if(mysqli_num_rows($search_result)>0)
+		 {
+		 while($search_row=mysqli_fetch_array($search_result)){
+			 array_push($materialinformation,$search_row);
+		 }
+		 }
+	 }
+	 echo json_encode($materialinformation);
 }
 ?>
