@@ -189,7 +189,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 
             <!-- Uploaded image area-->
            
-            <div class="image-area mt-1"><img id="imageResult" src="#" alt="" style="max-width: 68%;" name="imageresult" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+            <div class="image-area mt-1"><img id="imageResult" src="#" alt="" style="max-width: 50%;" name="imageresult" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
                       </div>
                     </div>
                 </div>
@@ -331,18 +331,17 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       </div>
                     </div>
                     <div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Other Country Driving License</label>
-                        <input type="text" id="other_country"  name="other_country" class="form-control" placeholder="">
-                      </div>
-                    </div> 
-					<div class="col-md-4">
-                      <div class="form-group ">
-                        <label>Relevant Experience</label>
-                        <input type="text" id="relevant_experience" name="relevant_experience" class="form-control" placeholder="">
+                      <div class="form-group">
+                        <label>Degree Name</label>
+                        <input type="text" id="degree_name" name="degree_name" class="form-control" placeholder="">
                       </div>
                     </div>
-                    
+					<div class="col-md-4 ">
+                      <div class="form-group">
+                        <label>Work Permit Number</label>
+                        <input type="text" id="work_permit_no" name="work_permit_no" class="form-control" placeholder="">
+                      </div>
+                    </div>
 					</div>
                   <div class="row">
                      
@@ -357,7 +356,21 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         </select>
                       </div>
                     </div>
+					<div class="col-md-4">
+                      <div class="form-group">
+                        <label>Primary Skill</label>
+                        <input type="text" id="primary_skill" name="primary_skill" class="form-control" placeholder="">
+                      </div>
+                    </div>
                     <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Secoundry Skill</label>
+                        <input type="text" id="secoundry_skill" name="secoundry_skill" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+				  <div class="row">
+					<div class="col-md-4">
                       <div class="form-group ">
                         <label>Singapore Experience</label>
                         <select class="form-control" id="singapore_experience" name="singapore_experience">
@@ -366,16 +379,36 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                           <option value="2">No</option>
                         </select>
                       </div>
-                    </div> 
+                    </div> 	
 					<div class="col-md-4" id="experience_hide">
                       <div class="form-group">
                         <label>If Yes</label>
                         <input type="text" id="singapore_experience_details" name="singapore_experience_details" class="form-control" placeholder="">
                       </div>
                     </div>
-                  </div>
-				  
-				   
+					<div class="col-md-4 experience_hide">
+                      <div class="form-group">
+                        <label>Year Experience</label>
+                        <input type="text" id="year_experience" name="year_experience" class="form-control" placeholder="">
+                      </div>
+                    </div>
+				  </div>
+				   <div class="row">
+				   <div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Total Experience</label>
+                        <input type="text" id="totalExperience"  name="totalExperience" class="form-control" placeholder="">
+                      </div>
+                    </div>
+					<div class="col-md-4">
+                      <div class="form-group ">
+                        <label>Relevant Experience</label>
+                        <input type="text" id="relevant_experience" name="relevant_experience" class="form-control" placeholder="">
+                      </div>
+                    </div>	
+					
+					
+				   </div>
 					  
 					   
                 </div>
@@ -412,7 +445,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group">
                         <label style="margin-left:19px;">10th Certficate</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:102%;">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" >
 							<input id="certficate_10th" type="file"  class="form-control border-0" name="certficate_10th">
 							<label id="certficate_10th-label" for="certficate_10th" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -426,7 +459,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                     <div class="col-md-4">
                       <div class="form-group ">
                         <label style="margin-left:19px;">12th Certficate</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:387px; margin-left:-10px;">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" >
 							<input id="certificate_12th" type="file"  class="form-control border-0" name="certificate_12th">
 							<label id="certificate_12th-label" for="certificate_12th" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -456,7 +489,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
 					<div class="col-md-4">
                       <div class="form-group ">
                         <label style="margin-left:19px;">Bachelors Degree</label>
-						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm" style="width:104%;">
+						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="bachelorsdegree" type="file"  class="form-control border-0" name="bachelorsdegree">
 							<label id="bachelorsdegree-label" for="bachelorsdegree" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
@@ -471,7 +504,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                       <div class="form-group ">
                         <label style="margin-left:19px;">MasterDegree</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
-							<input id="degree" type="file" onchange="readURL(this);" class="form-control border-0" name="degree">
+							<input id="degree" type="file"  class="form-control border-0" name="degree">
 							<label id="degree-label" for="degree" class="font-weight-light text-muted">Choose Your Certificate</label>
 							<div class="input-group-append">
 								<label for="degree" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
@@ -503,7 +536,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         <label style="margin-left:19px;">Mark Sheet</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="sheet" type="file"  class="form-control border-0" name="sheet">
-							<label id="sheet-label" for="sheet" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<label id="sheet-label" for="sheet" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
 								<label for="sheet" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
 								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
@@ -514,10 +547,10 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                  </div>
 				<div class="col-md-4">
                       <div class="form-group ">
-                        <label style="margin-left:19px;">Class3 Lic</label>
+                        <label style="margin-left:19px;">Work Experience Certificate</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="class3_lic" type="file"  class="form-control border-0" name="class3_lic">
-							<label id="class3_lic_label" for="class3_lic" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<label id="class3_lic_label" for="class3_lic" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
 								<label for="class3_lic" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
 								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
@@ -533,7 +566,7 @@ $job	= explode("?",$_SERVER['REQUEST_URI']);
                         <label style="margin-left:19px;">Others</label>
 						<div class="input-group mb-1 px-2 py-2 rounded-pill bg-white shadow-sm">
 							<input id="skilled" type="file"  class="form-control border-0" name="skilled">
-							<label id="skilled-label" for="skilled" class="font-weight-light text-muted">Choose Your Profile Image</label>
+							<label id="skilled-label" for="skilled" class="font-weight-light text-muted">Choose Your Certficate</label>
 							<div class="input-group-append">
 								<label for="skilled" class="btn btn-info m-0 rounded-pill px-4" style="background: #6200ea;color: #fff;" > <i class="fa fa-cloud-upload mr-2 text-muted"></i>
 								  <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="25" class="mb-1">&nbsp;&nbsp;<small class="text-uppercase font-weight-bold text-muted" style="color:#fff !important">Choose file</small>
@@ -1003,7 +1036,7 @@ function getJobDetails()
 		$.post('api.php?action=getjobDetails&id='+<?php echo $job[1];?>, {} ,function(data){
 		console.log(data);
 		data=JSON.parse(data);
-		var education = data[0]['education_requried'];
+		var education = data[0]['is_edu_required'];
 		if(education!=1){
 			$('#materDegreehide1').hide();
 		}

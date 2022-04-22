@@ -379,7 +379,7 @@ getcategorylist();
 getsalarylist();
 function getjoblist(){
    $.post('api.php?action=getjoblist', {} ,function(data){
-		console.log(data);
+		//console.log(data);
 		var description = "";
 		data=JSON.parse(data);
 		console.log(data.length);
@@ -397,7 +397,7 @@ function getjoblist(){
 }
 function getsectorslist(){
    $.post('api.php?action=getsectorslist', {} ,function(data){
-		console.log(data);
+		//console.log(data);
 		data=JSON.parse(data);
 		console.log(data.length);
 		data.forEach((option)=>
@@ -408,7 +408,7 @@ function getsectorslist(){
 }
 function getexperiencelist(){
    $.post('api.php?action=getexperiencelist', {} ,function(data){
-		console.log(data);
+		//console.log(data);
 		data=JSON.parse(data);
 		console.log(data.length);
 		data.forEach((option)=>
@@ -419,7 +419,7 @@ function getexperiencelist(){
 }
 function getcategorylist(){
    $.post('api.php?action=getcategorylist', {} ,function(data){
-		console.log(data);
+		//console.log(data);
 		data=JSON.parse(data);
 		console.log(data.length);
 		data.forEach((option)=>
@@ -430,7 +430,7 @@ function getcategorylist(){
 }
 function getsalarylist(){
    $.post('api.php?action=getsalarylist', {} ,function(data){
-		console.log(data);
+		//console.log(data);
 		data=JSON.parse(data);
 		console.log(data.length);
 		data.forEach((option)=>
