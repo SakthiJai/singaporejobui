@@ -29,7 +29,7 @@ switch($action)
 	case'registerForminsert':
 		registerForminsert($conn,$_POST);
 	break;
-	case'getdegreecat':
+	case'getjobapplication':
 		getdegreecat($conn,$_GET['id']);
 	break;
 	default:

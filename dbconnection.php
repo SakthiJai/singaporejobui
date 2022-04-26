@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databse  ="singaporejob";
+$databse  ="singapora";
 $conn = new mysqli($servername, $username, $password,$databse);
 
 // Check connection

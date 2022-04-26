@@ -1,0 +1,238 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+body{
+    background: #eee;
+}
+.process-box{
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 2px 2px 7px 0 #00000057;
+}
+.process-left:after{
+        content: "";
+    border-top: 15px solid #ffffff;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid #ffffff;
+    border-right: 15px solid #ffffff;
+    display: inline-grid;
+    position: absolute;
+    right: -15px;
+    top: 42%;
+    transform: rotate(45deg);
+    box-shadow: 3px -2px 3px 0px #00000036;
+    z-index: 1;
+}
+.process-right:after{
+        content: "";
+    border-top: 15px solid #ffffff00;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid #ffffff;
+    border-right: 15px solid #ffffff00;
+    display: inline-grid;
+    position: absolute;
+    left: -15px;
+    top: 42%;
+    transform: rotate(45deg);
+    box-shadow: -1px 1px 3px 0px #0000001a;
+    z-index: 1;
+}
+.process-step{
+    background: #00BCD4;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: #fff;
+    height: 100%;
+    padding-top: 8px;
+    position: relative;
+    top: -26px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: -6px 8px 0px 0px #00000014;
+}
+.process-point-right{
+    background: #ffffff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 8px solid #00bcd4;
+    box-shadow: 0 0 0px 4px #5c5c5c;
+    margin: auto 0;
+    position: absolute;
+    bottom: 40px;
+    left: -63px;
+}
+.process-point-right:before{
+    content: "";
+    height: 144px;
+    width: 11px;
+    background: #5c5c5c;
+    display: inline-grid;
+    transform: rotate(36deg);
+    position: relative;
+    left: -50px;
+    top: -0px;
+}
+.process-point-left{
+    background: #ffffff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 8px solid #00bcd4;
+    box-shadow: 0 0 0px 4px #5c5c5c;
+    margin: auto 0;
+    position: absolute;
+    bottom: 40px;
+    right: -63px;
+}
+.process-point-left:before {
+    content: "";
+    height: 144px;
+    width: 11px;
+    background: #5c5c5c;
+    display: inline-grid;
+    transform: rotate(-38deg);
+    position: relative;
+    left: 50px;
+    top: 0px;
+
+}
+
+.process-last:before{
+    display: none;
+}
+.process-box p{
+    z-index: 9;
+}
+.process-step p{
+    font-size: 20px;
+}
+.process-step h2{
+    font-size: 39px;
+}
+.process-step:after{
+    content: "";
+    border-top: 8px solid #04889800;
+    border-bottom: 8px solid #048898;
+    border-left: 8px solid #04889800;
+    border-right: 8px solid #048898;
+    display: inline-grid;
+    position: absolute;
+    left: -16px;
+    top: 0;
+}
+.process-step:before{
+    content: "";
+    border-top: 8px solid #ff000000;
+    border-bottom: 8px solid #048898;
+    border-left: 8px solid #048898;
+    border-right: 8px solid #ff000000;
+    display: inline-grid;
+    position: absolute;
+    right: -16px;
+    top: 0;
+}
+.process-line-l{
+    background: white;
+    height: 4px;
+    position: absolute;
+    width: 136px;
+    right: -153px;
+    top: 64px;
+    z-index: 9;
+}
+.process-line-r{
+    background: white;
+    height: 4px;
+    position: absolute;
+    width: 136px;
+    left: -153px;
+    top: 63px;
+    z-index: 9;
+}
+.demos{
+font-size:12px;
+}
+.tech{
+font-size:15px;
+}
+
+</style>
+<section class="our-blog p-0 m-0 bg-silver" style="background-color:white;">
+    <div class="container work-process  pb-5 pt-5">
+        <div class="title mb-5 text-center">
+        <h3>Our <span class="site-color">Applicance</span></h3>
+    </div>
+        <!-- ============ step 1 =========== -->
+		<div class="joblist" >
+        <div class="row" id="job_list">
+           
+		</div>
+		</div>
+		</div>
+	
+</section>
+	<script>
+  //AOS.init();
+  getjobapplication();
+  function getjobapplication()
+{
+	
+		$.post('api.php?action=getjobapplication', {} ,function(data){
+		
+		var datas=JSON.parse(data);
+		 console.log(datas);
+		 datas.forEach((element) => {
+		     
+                             var html='<div class="col-md-4" style="margin-top:32px;">';
+                            html+='<div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000" style="height:144px;">';
+                              html+='<div class="row">';
+                          html+='<div class="col-md-5">';
+                           html+='<div class="process-step" style="height:98px; background-color:lightgreen;">';
+                               html+='<img src="assets/images/man.jpg" alt="image" class="profile-pic" style="width:72px;">';
+                           html+='</div>';
+                        html+='</div>';
+                        html+='<div class="col-md-7">';
+                           html+='<div class="row">';
+							 html+='<h5 style="margin-left:-10px;">Sectors Constration</h5>';
+							 html+='<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" style="margin-left:17px; margin-top:8px;">';
+							 html+='</div>';
+							 
+							 html+='<h5  class="tech" style="margin-left:-22px;color:lightgreen;">'+element.first_name+'</h5>';
+							 html+='<div class="row">';
+                             html+='<p style="color:lightgreen;font-weight:bold;font-size:15px; margin-left:-8px;margin-top: -13px;">work:Eletrical</p>';
+						     html+='<span style="color:black;margin-left:36px; margin-top:-12px;">Age'+element.age+'</span>';
+							 html+='</div>';
+							 html+='<div class="row">';
+                            html+=' <p style="margin-top:-19px;margin-left: -9px;font-size: 15px;color:lightgreen;font-weight:bold;">Exp:2yrs <img src="assets/images/united-kingdom.png" alt="image" class="profile-pic" style="width:24px;"></p>';
+						 html+='</div>';
+							 html+='<div class="row">';
+                            html+=' <p style="font-weight:bold;margin-left:-8px;margin-top:-16px;">Qul:12th</p>';
+							 html+='<span class="demos" style="color:black;margin-left:41px;margin-top: -13px;">Read more</span>'
+							 html+='</div>';
+                         html+='</div>';
+                    html+='</div>';
+					 html+='</div>';
+					  html+='</div>';
+					   html+='</div>';
+						
+                 html+='</div>';
+             html+='</div>';
+			
+					$("#job_list").append(html);
+				AOS.init();
+				
+		});
+		});
+		
+setTimeout(function(){$('#job_list')},5000);
+		
+}
+</script>
